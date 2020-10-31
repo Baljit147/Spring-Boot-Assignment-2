@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Receipt</title>
+	<link th:href="@{/css/styling.css}" rel="stylesheet"/>
+</head>
+
+<body>
+
+<h1>Receipt</h1>
+
+<table>
+	<tr>
+		<th>ID:</th>
+		<th>Make:</th>
+		<th>Model:</th>
+		<th>Colour:</th>
+
+		<th>Vin:</th>
+		<th>Dealership:</th>
+	</tr>
+	
+	<tr th:each="cars:${carList}">
+		<td th:text="${cars.id}"></td>
+		<td th:text="${cars.make}"></td>
+		<td th:text="${cars.model}"></td>
+		<td th:text="${cars.colour}"></td>
+
+		<td th:text="${cars.vin}"></td>
+		<td th:text="${cars.dealership}"></td>
+	</tr>
+	
+</table>
+<br><br>
+<table>
+	<tr>
+		<th>Price</th>
+	</tr>
+	
+	<tr th:each="cars:${carList}">
+		<td th:text="${cars.price}"></td>
+	</tr>
+	<tr>
+		<th>Price Including Tax</th>
+	</tr>
+	
+	<tr>
+		<td> <span th:text="${tax}"> </span> </td>
+	</tr>
+
+</table>
+
+<br><br>
+<a href="/">Home Page</a>
+
+</body>
+</html>

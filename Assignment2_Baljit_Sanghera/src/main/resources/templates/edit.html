@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link th:href="@{/css/styling.css}" rel="stylesheet"/>
+</head>
+
+<body>
+
+<h1>Modify Car</h1>
+<form action="#" th:action="@{/modify}" th:object="${car}" method="get"><br><br>
+	<input type="hidden" th:field="*{id}">
+	Make: <input type="text" th:field="*{make}"><br><br>
+	Model: <input type="text" th:field="*{model}"><br><br>
+	Colour: <input type="text" th:field="*{colour}"><br><br>
+	Price: <input type="text" th:field="*{price}"><br><br>
+	VIN: <input type="text" th:field="*{vin}"><br><br>
+	Dealerships: <select th:field="*{dealership}">
+	<option th:each="i : *{dealerList}" th:value="${i}" th:text="${i}">
+	</select><br><br>
+	
+	<input type="submit" value="Submit">
+</form>
+
+<a th:href="@{/view}">View Cars</a>
+
+</body>
+</html>

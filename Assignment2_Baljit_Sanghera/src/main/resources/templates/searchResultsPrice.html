@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Price Search Results</title>
+	<link th:href="@{/css/styling.css}" rel="stylesheet"/>
+</head>
+
+<body>
+
+<table>
+	<tr>
+		<th>ID:</th>
+		<th>Make:</th>
+		<th>Model:</th>
+		<th>Colour:</th>
+		<th>Price:</th>
+		<th>Vin:</th>
+		<th>Dealership:</th>
+	</tr>
+	
+	<tr th:each="cars:${carList}">
+		<td th:text="${cars.id}"></td>
+		<td th:text="${cars.make}"></td>
+		<td th:text="${cars.model}"></td>
+		<td th:text="${cars.colour}"></td>
+		<td th:text="${cars.price}"></td>
+		<td th:text="${cars.vin}"></td>
+		<td th:text="${cars.dealership}"></td>
+		<td><a href="" th:href="@{/edit/{id}(id=${cars.id})}">EDIT</a></td>
+		<td><a href="" th:href="@{/delete/{id}(id=${cars.id})}">DELETE</a></td>
+		<td><a href="" th:href="@{/purchase/{id}(id=${cars.id})}">Purchase</a></td>
+	</tr>
+</table>
+
+<br><br>
+<a href="/">Home Page</a>
+
+</body>
+</html>

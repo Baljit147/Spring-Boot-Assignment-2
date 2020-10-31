@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Search</title>
+	<link th:href="@{/css/styling.css}" rel="stylesheet"/>
+</head>
+
+<body>
+<h1>Search</h1>
+
+<h3>Search By Id</h3><br>
+<form action="#" th:action="@{/searchById}" th:object="${car}" method="get">
+	Search By ID: <input type="text" th:field="*{id}">
+	<input type="hidden" th:field="*{make}">
+	<input type="hidden" th:field="*{model}">
+	<input type="hidden" th:field="*{colour}">
+	<input type="hidden" th:field="*{price}">
+	<input type="hidden" th:field="*{vin}">
+	<br><br>
+	<input type="submit" value="Submit">
+</form>
+
+<h3>Search By Make</h3><br>
+<form action="#" th:action="@{/searchByMake}" th:object="${car}" method="get">
+	<input type="hidden" th:field="*{id}">
+	Search By Make <input type="text" th:field="*{make}">
+	<input type="hidden" th:field="*{model}">
+	<input type="hidden" th:field="*{colour}">
+	<input type="hidden" th:field="*{price}">
+	<input type="hidden" th:field="*{vin}">
+	<br><br>
+	<input type="submit" value="Submit">
+</form>
+
+<h3>Search By Model</h3><br>
+<form action="#" th:action="@{/searchByModel}" th:object="${car}" method="get">
+	<input type="hidden" th:field="*{id}">
+	<input type="hidden" th:field="*{make}">
+	Search By Model<input type="text" th:field="*{model}">
+	<input type="hidden" th:field="*{colour}">
+	<input type="hidden" th:field="*{price}">
+	<input type="hidden" th:field="*{vin}">
+	<br><br>
+	<input type="submit" value="Submit">
+</form>
+
+<h3>Search By Price Range</h3><br>
+<form action="searchByPrice">
+	From: <input type="text" name="lowerNumber">
+	To: <input type="text" name="higherNumber">
+	<br><br>
+	<input type="submit" value="Submit">
+</form>
+
+<br>
+<a href="/">Home Page</a>
+
+</body>
+</html>
