@@ -1,20 +1,43 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<img th:src="@{/images/car.jpg}" alt="car">
-
 <head>
 	<meta charset="UTF-8">
 	<title>Home Page</title>
-	<link th:href="@{/css/styling.css}" rel="stylesheet"/>
+	<!-- <link th:href="@{/css/styling.css}" rel="stylesheet"/> -->
+	<link th:href="@{/css/homePage.css}" rel="stylesheet"/>	
 </head>
 
 <body>
-<h1>Home Page</h1>
 
-<a href="/add">Add cars</a><br><br>
-<a href="/view">View Car Inventory</a><br><br>
-<a href="/searchPage">Search</a>
+<div class="container">
+<div class="image">
+<img th:src="@{/images/car.jpg}" alt="car">
+</div>
 
+<div class="titleBar">
+Baljit's Exotic Car Dealership
+</div>
+
+<div class="secondHeader">Welcome to Baljit's car dealership, we have a large selection
+of high end exotic sports cars, they are definitely not beaters.<br>Come on down to 
+the most trusted car deakership ever.</div>
+
+<div class="addCars">
+<a href="/add">Add Cars</a>
+</div>
+
+<div class="viewExistingInventory">
+<a href="/view">View Car Inventory</a>
+</div>
+
+<div class="searchInventory">
+<a href="/searchPage">Search Inventory</a>
+</div>
+
+<div class="leftSpacer"></div>
+<div class="rightSpacer"></div>
+</div>
 </body>
+
 </html>
